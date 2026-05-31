@@ -103,10 +103,22 @@ video {
   text-transform: uppercase;
 }
 
-.paper-kicker span:nth-child(2) {
+.paper-kicker .venue-badge {
   background: rgba(180, 83, 9, 0.11);
   border-color: rgba(180, 83, 9, 0.22);
   color: #873d06;
+}
+
+.paper-kicker .award-badge {
+  background: rgba(15, 118, 110, 0.12);
+  border-color: rgba(15, 118, 110, 0.24);
+  color: var(--teal-dark);
+}
+
+.paper-kicker .workshop-award {
+  background: rgba(15, 118, 110, 0.12);
+  border-color: rgba(15, 118, 110, 0.24);
+  color: var(--teal-dark);
 }
 
 .publication-title {
@@ -123,6 +135,17 @@ video {
   color: var(--muted);
   font-weight: 600;
   margin-bottom: 0.5rem;
+}
+
+.publication-authors a {
+  color: var(--teal-dark);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.publication-authors a:hover {
+  color: var(--blue);
 }
 
 .author-block {
