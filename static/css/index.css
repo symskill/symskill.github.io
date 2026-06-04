@@ -115,6 +115,29 @@ video {
   color: var(--teal-dark);
 }
 
+.paper-kicker .headline-award {
+  align-items: center;
+  background: linear-gradient(135deg, #b8860b 0%, #f6c453 45%, #fff3c4 50%, #f6c453 55%, #b8860b 100%);
+  border: 1px solid rgba(146, 100, 4, 0.55);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  color: #4a3404;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 900;
+  gap: 0.4rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  padding: 0.6rem 0.95rem;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.paper-kicker .headline-award i {
+  color: #7a5402;
+  font-size: 0.9em;
+}
+
 .paper-kicker .workshop-award {
   background: rgba(15, 118, 110, 0.12);
   border-color: rgba(15, 118, 110, 0.24);
