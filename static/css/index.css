@@ -123,26 +123,17 @@ video {
   color: var(--teal-dark);
 }
 
+@property --headline-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .paper-kicker .headline-award {
+  position: relative;
   align-items: center;
-  background:
-    linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(
-        100deg,
-        #ff3b3b,
-        #ff8a00,
-        #ffd000,
-        #36c945,
-        #1ea7ff,
-        #6a5cff,
-        #c33bff,
-        #ff3b3b
-      )
-      border-box;
-  background-size: auto, 220% auto;
-  background-repeat: no-repeat;
-  animation: headline-rainbow 6s linear infinite;
-  border: 2px solid transparent;
+  background: #fff;
+  border: 0;
   border-radius: 999px;
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.1);
   color: #111;
@@ -156,22 +147,44 @@ video {
   text-transform: uppercase;
 }
 
+/* Rotating rainbow ring around the pill boundary */
+.paper-kicker .headline-award::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--headline-angle),
+    #ff3b3b,
+    #ff8a00,
+    #ffd000,
+    #36c945,
+    #1ea7ff,
+    #6a5cff,
+    #c33bff,
+    #ff3b3b
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: headline-rainbow 4s linear infinite;
+}
+
 .paper-kicker .headline-award i {
   color: #111;
   font-size: 0.9em;
 }
 
 @keyframes headline-rainbow {
-  0% {
-    background-position: 0 0, 0% 50%;
-  }
-  100% {
-    background-position: 0 0, 220% 50%;
+  to {
+    --headline-angle: 360deg;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .paper-kicker .headline-award {
+  .paper-kicker .headline-award::before {
     animation: none;
   }
 }
