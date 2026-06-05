@@ -125,44 +125,48 @@ video {
 
 .paper-kicker .headline-award {
   align-items: center;
-  background: linear-gradient(
-    100deg,
-    #ff3b3b 0%,
-    #ff8a00 16%,
-    #ffd000 32%,
-    #36c945 48%,
-    #1ea7ff 64%,
-    #6a5cff 80%,
-    #c33bff 100%
-  );
-  background-size: 220% auto;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+        100deg,
+        #ff3b3b,
+        #ff8a00,
+        #ffd000,
+        #36c945,
+        #1ea7ff,
+        #6a5cff,
+        #c33bff,
+        #ff3b3b
+      )
+      border-box;
+  background-size: auto, 220% auto;
+  background-repeat: no-repeat;
   animation: headline-rainbow 6s linear infinite;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  border: 2px solid transparent;
   border-radius: 999px;
-  box-shadow: 0 4px 16px rgba(106, 92, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.45);
-  color: #fff;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.1);
+  color: #111;
   display: inline-flex;
   font-size: 0.82rem;
   font-weight: 900;
   gap: 0.4rem;
   letter-spacing: 0.01em;
   line-height: 1;
-  padding: 0.6rem 0.95rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  padding: 0.58rem 0.95rem;
   text-transform: uppercase;
 }
 
 .paper-kicker .headline-award i {
-  color: #fff;
+  color: #111;
   font-size: 0.9em;
 }
 
 @keyframes headline-rainbow {
   0% {
-    background-position: 0% 50%;
+    background-position: 0 0, 0% 50%;
   }
   100% {
-    background-position: 220% 50%;
+    background-position: 0 0, 220% 50%;
   }
 }
 
